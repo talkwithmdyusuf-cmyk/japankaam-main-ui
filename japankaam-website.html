@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JapanKaam for Employers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#B3261E; --navy:#14213D; --navy-deep:#0E1730; --ink-2:#4A5265; --ink-3:#5A6273;
+  --line:#E6E3DC; --line-2:#C9C4B8; --sand:#F7F5F0; --sand-2:#F4F1EA; --gold:#F2C14E;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'IBM Plex Sans','Noto Sans JP',system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.55}
+a{color:var(--navy)}a:hover{color:var(--accent)}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.display{font-family:'Bricolage Grotesque',sans-serif}
+.jp{font-family:'Noto Sans JP',sans-serif}
+.eyebrow{margin:0 0 10px;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#B3261E}
+.h2{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em;line-height:1.1}
+.muted{color:var(--ink-2)}
+.btn-dark{text-decoration:none;padding:11px 18px;border-radius:8px;background:var(--navy);color:#fff;font-weight:600;font-size:15px;display:inline-block}
+.btn-dark:hover{color:#fff;opacity:.92}
+.pill{padding:5px 10px;border-radius:999px;background:var(--sand-2)}
+.pill.blue{background:#E8EEF9;color:#1D3A70}
+.avatar{border-radius:50%;background:#E8EEF9;color:#1D3A70;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;flex:none}
+.head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:32px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;background:#fff;color:var(--navy);border:1px solid var(--line-2)}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.seg{min-height:44px;padding:0 12px;border:none;font:inherit;font-size:14px;font-weight:600;cursor:pointer;background:#fff;color:var(--navy)}
+.seg[aria-pressed="true"]{background:var(--navy);color:#fff}
+.field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.field input,.field select{font:inherit;font-size:16px;font-weight:400;padding:12px 14px;border:1px solid var(--line-2);border-radius:8px;color:var(--navy);background:#fff}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.radio{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line-2);border-radius:8px;font-size:15px;font-weight:400}
+.big-btn{min-height:52px;border-radius:10px;font:inherit;font-weight:600;font-size:16px;cursor:pointer}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div>
+
+<!-- NAV -->
+<header style="border-bottom:1px solid var(--line);background:#fff">
+  <nav aria-label="Main" class="wrap" style="padding-top:18px;padding-bottom:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)">
+      <span aria-hidden="true" class="jp" style="width:38px;height:38px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px">仕</span>
+      <span style="display:flex;flex-direction:column;line-height:1.1">
+        <span class="display" style="font-weight:800;font-size:22px;letter-spacing:-.02em">JapanKaam</span>
+        <span style="font-size:12px;font-weight:600;color:var(--ink-3)">for Employers · 採用企業様向け</span>
+      </span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;gap:28px;font-weight:500;font-size:15px">
+      <a href="#talent" style="text-decoration:none">Talent pool</a>
+      <a href="#sectors" style="text-decoration:none">Sectors</a>
+      <a href="#how" style="text-decoration:none">How hiring works</a>
+      <a href="#support" style="text-decoration:none">Japanese support team</a>
+      <a href="#pricing" style="text-decoration:none">Pricing</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+      <div role="group" aria-label="Language" style="display:flex;border:1px solid var(--line-2);border-radius:8px;overflow:hidden">
+        <button type="button" class="seg" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="seg" data-lang="ja" aria-pressed="false">日本語</button>
+      </div>
+      <a href="#login" style="text-decoration:none;padding:11px 18px;border-radius:8px;border:1px solid var(--line-2);font-weight:600;font-size:15px">Log in</a>
+      <a href="#post" class="btn-dark">Post a job</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="background:var(--navy);color:#fff;position:relative;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;right:-140px;top:-140px;width:540px;height:540px;border-radius:50%;background:var(--accent);opacity:.92"></div>
+  <div class="wrap" style="position:relative;padding-top:88px;padding-bottom:96px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+    <div style="flex:999 1 520px;min-width:0">
+      <p class="jp" style="margin:0 0 18px;font-size:15px;font-weight:700;color:var(--gold)">インドの即戦力人材を、日本の現場へ。</p>
+      <h1 class="display" style="margin:0 0 20px;font-weight:800;font-size:clamp(40px,6vw,68px);line-height:1.04;letter-spacing:-.03em">Hire skilled, Japanese-ready talent from India.</h1>
+      <p style="margin:0 0 12px;font-size:19px;max-width:580px;color:#D7DCE6">Pre-screened candidates with verified skills tests and JLPT levels — and a Japanese-speaking executive team that supports you at every step, from job posting to first day.</p>
+      <p class="jp" lang="ja" style="margin:0 0 36px;font-size:16px;font-weight:500;max-width:580px;color:#C4CBDA;line-height:1.75">スキル試験とJLPTレベルを確認済みの、事前選考を通過した人材をご紹介します。求人掲載から入社初日まで、日本語を話すエグゼクティブチームがすべての段階でサポートいたします。</p>
+
+      <form role="search" aria-label="Search candidates" style="background:#fff;border-radius:14px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;max-width:740px" onsubmit="event.preventDefault();location.hash='talent'">
+        <label style="flex:1 1 180px;display:flex;flex-direction:column;padding:8px 14px;color:var(--navy)">
+          <span style="font-size:12px;font-weight:600;color:var(--ink-3)">Sector · 分野</span>
+          <select style="border:none;outline:none;font:inherit;font-size:16px;padding:4px 0;color:var(--navy);background:transparent">
+            <option>Caregiving · 介護</option><option>IT &amp; Engineering · IT</option><option>Food service · 外食</option><option>Construction · 建設</option><option>Manufacturing · 製造</option>
+          </select>
+        </label>
+        <label style="flex:1 1 140px;display:flex;flex-direction:column;padding:8px 14px;border-left:1px solid var(--line);color:var(--navy)">
+          <span style="font-size:12px;font-weight:600;color:var(--ink-3)">Japanese level · 日本語</span>
+          <select style="border:none;outline:none;font:inherit;font-size:16px;padding:4px 0;color:var(--navy);background:transparent">
+            <option>N4 or above</option><option>N3 or above</option><option>N2 or above</option><option>Any level</option>
+          </select>
+        </label>
+        <button type="submit" style="flex:0 0 auto;min-height:56px;padding:0 28px;border:none;border-radius:10px;background:var(--accent);color:#fff;font:inherit;font-weight:600;font-size:16px;cursor:pointer;display:flex;align-items:center;gap:8px">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          Find candidates
+        </button>
+      </form>
+      <div style="margin-top:22px">
+        <a href="#consult" style="text-decoration:none;color:#fff;font-weight:600;border-bottom:1px solid #8C97B3;padding-bottom:2px">Book a free hiring consultation (Japanese / English) →</a>
+      </div>
+    </div>
+
+    <!-- Candidate preview -->
+    <div style="flex:1 1 320px;min-width:0;display:flex;justify-content:center">
+      <article aria-label="Sample candidate profile" style="background:#fff;color:var(--navy);border-radius:18px;padding:24px;width:100%;max-width:370px;box-shadow:0 24px 60px rgba(0,0,0,.25)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:#E6F3EC;color:#175C3A">Available · [MONTH]</span>
+          <span style="font-size:12px;color:var(--ink-3)">ID [JK-0000]</span>
+        </div>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:18px">
+          <div aria-hidden="true" class="avatar" style="width:56px;height:56px">AK</div>
+          <div>
+            <p class="display" style="margin:0;font-weight:700;font-size:20px">Caregiver candidate</p>
+            <p style="margin:0;color:var(--ink-2);font-size:14px">[Years] yrs experience · Kerala, India</p>
+          </div>
+        </div>
+        <div id="checks" style="display:flex;flex-direction:column;gap:10px"></div>
+        <div style="display:flex;gap:10px;margin-top:20px">
+          <a href="#profile" style="flex:1;text-align:center;text-decoration:none;padding:13px;border-radius:10px;background:var(--sand-2);font-weight:600">View profile</a>
+          <a href="#interview" style="flex:1;text-align:center;text-decoration:none;padding:13px;border-radius:10px;background:var(--navy);color:#fff;font-weight:600">Request interview</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="wrap" style="padding-top:96px;padding-bottom:48px">
+  <p class="eyebrow">Why hire through JapanKaam · 選ばれる理由</p>
+  <h2 class="h2" style="margin-bottom:40px;max-width:760px">Solve staffing shortages with people who are ready for your workplace</h2>
+  <div id="why" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px"></div>
+</section>
+
+<!-- SECTORS -->
+<section id="sectors" class="wrap" style="padding-top:48px;padding-bottom:96px">
+  <div class="head-row">
+    <div>
+      <p class="eyebrow">Sectors · 対応分野</p>
+      <h2 class="h2" style="font-size:clamp(28px,3.6vw,40px)">Talent for the roles you struggle to fill</h2>
+    </div>
+    <a href="#sectors" style="font-weight:600">All SSW sectors →</a>
+  </div>
+  <div id="sectorGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px"></div>
+</section>
+
+<!-- TALENT POOL -->
+<section id="talent" style="background:var(--sand)">
+  <div class="wrap" style="padding-top:88px;padding-bottom:88px">
+    <div class="head-row">
+      <div>
+        <p class="eyebrow">Talent pool · 人材を探す</p>
+        <h2 class="h2">Pre-screened candidates, ready to interview</h2>
+      </div>
+      <div id="filters" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+    </div>
+    <div id="candidates" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px"></div>
+    <p style="margin:24px 0 0;font-size:14px;color:var(--ink-3)">Profiles are anonymised until you request an interview. 面接依頼後に詳細プロフィールを開示します。</p>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="wrap" style="padding-top:96px;padding-bottom:96px">
+  <p class="eyebrow">How hiring works · 採用の流れ</p>
+  <h2 class="h2" style="margin-bottom:48px;max-width:680px">From job posting to first day, in four steps</h2>
+  <ol id="steps" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:32px"></ol>
+</section>
+
+<!-- SUPPORT -->
+<section id="support" class="wrap" style="padding-bottom:96px">
+  <div style="background:var(--navy);color:#fff;border-radius:24px;padding:56px 48px;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+    <div style="flex:999 1 420px;min-width:0">
+      <p class="eyebrow" style="color:var(--gold)">Japanese-speaking support · 日本語対応</p>
+      <h2 class="h2" style="margin-bottom:16px;font-size:clamp(28px,3.6vw,40px)">Our executives speak Japanese — so your team never has to work in English</h2>
+      <p class="jp" style="margin:0 0 12px;font-weight:500;color:var(--gold);font-size:16px">日本語を話す専任スタッフが、採用から入社後まで丁寧にサポートします。</p>
+      <p style="margin:0 0 28px;color:#D7DCE6;font-size:17px;max-width:520px">Every employer gets a dedicated support executive who speaks Japanese. They coordinate with candidates, join your interviews and stay in touch after your new hire joins.</p>
+      <a href="#consult" style="display:inline-block;text-decoration:none;padding:13px 22px;border-radius:10px;background:#fff;color:var(--navy);font-weight:600">Talk to our team in Japanese · 日本語で相談</a>
+    </div>
+    <ul id="supportList" style="flex:1 1 320px;min-width:0;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px"></ul>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--sand)">
+  <div class="wrap" style="padding-top:88px;padding-bottom:88px">
+    <p class="eyebrow">Pricing · 料金プラン</p>
+    <h2 class="h2" style="margin-bottom:40px">Pay when you hire. No fees charged to candidates.</h2>
+    <div id="plans" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px"></div>
+  </div>
+</section>
+
+<!-- CONSULT -->
+<section id="consult" class="wrap" style="padding-top:96px;padding-bottom:96px">
+  <div style="border:2px solid var(--navy);border-radius:24px;padding:48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px">
+    <div style="flex:999 1 380px;min-width:0">
+      <p class="jp" style="margin:0 0 6px;font-weight:700;color:#B3261E">まずは無料でご相談ください</p>
+      <h2 class="h2" style="margin-bottom:10px;font-size:clamp(26px,3.2vw,36px);line-height:1.15">Tell us who you need. We'll send a shortlist.</h2>
+      <p style="margin:0;color:var(--ink-2);font-size:16px">A Japanese-speaking hiring advisor will reply within [X] business days.</p>
+    </div>
+    <form aria-label="Request a consultation" action="https://formsubmit.co/bg@japankaam.com" method="POST" style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:12px">
+      <input type="hidden" name="_subject" value="New consultation request — JapanKaam website">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="field" style="gap:4px">Company name · 会社名<input type="text" name="Company" required></label>
+      <label class="field" style="gap:4px">Work email · メールアドレス<input type="email" name="email" required></label>
+      <button type="submit" class="big-btn" style="border:none;background:var(--accent);color:#fff">Request consultation · 相談する</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--navy-deep);color:#C4CBDA">
+  <div class="wrap" style="padding-top:64px;padding-bottom:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;font-size:15px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span class="display" style="font-weight:800;font-size:22px;color:#fff">JapanKaam</span>
+      <span>Indian talent for Japanese workplaces.</span>
+      <span class="jp" style="font-size:14px">インド人材の採用・定着支援</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="color:#fff;font-weight:600">Employers</span>
+      <a href="#talent" style="color:#C4CBDA;text-decoration:none">Search talent</a>
+      <a href="#post" style="color:#C4CBDA;text-decoration:none">Post a job</a>
+      <a href="#pricing" style="color:#C4CBDA;text-decoration:none">Pricing</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="color:#fff;font-weight:600">Resources</span>
+      <a href="#support" style="color:#C4CBDA;text-decoration:none">SSW hiring guide</a>
+      <a href="#support" style="color:#C4CBDA;text-decoration:none">Talk to us in Japanese</a>
+      <a href="#seekers" style="color:#C4CBDA;text-decoration:none">For job seekers</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="color:#fff;font-weight:600">Company</span>
+      <a href="#about" style="color:#C4CBDA;text-decoration:none">About</a>
+      <a href="#contact" style="color:#C4CBDA;text-decoration:none">Contact</a>
+      <a href="#privacy" style="color:#C4CBDA;text-decoration:none">Privacy</a>
+    </div>
+  </div>
+  <div class="wrap" style="padding-top:20px;padding-bottom:32px;border-top:1px solid #253255;font-size:13px">© 2026 JapanKaam · [Licence no. / 有料職業紹介事業許可番号] · [Registered Support Organization no. / 登録支援機関番号]</div>
+</footer>
+
+<!-- JOB SEEKER SIDE TAB -->
+<button type="button" id="seekerTab" aria-label="For job seekers: share your details" style="position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:40;border:none;border-radius:12px 0 0 12px;background:var(--accent);color:#fff;padding:22px 12px;cursor:pointer;font:inherit;font-weight:600;font-size:15px;writing-mode:vertical-rl;display:flex;align-items:center;gap:10px;box-shadow:-6px 8px 24px rgba(20,33,61,.25)">
+  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+  For job seekers · 求職者の方
+</button>
+
+<div id="panel" hidden style="position:fixed;inset:0;z-index:50;display:flex;justify-content:flex-end">
+  <button type="button" aria-label="Close registration" data-close style="position:absolute;inset:0;border:none;background:rgba(14,23,48,.55);cursor:pointer"></button>
+  <aside aria-label="Job seeker registration" style="position:relative;width:100%;max-width:460px;background:#fff;display:flex;flex-direction:column;box-shadow:-16px 0 48px rgba(14,23,48,.3)">
+    <div style="padding:24px 24px 16px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start">
+      <div style="flex:1;min-width:0">
+        <p style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#B3261E">For job seekers in India</p>
+        <h2 class="display" style="margin:0 0 4px;font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1.15">Share your details with Japanese employers</h2>
+        <p style="margin:0;font-size:14px;color:var(--ink-3)">Free for candidates. Fill in English, हिंदी or தமிழ்.</p>
+      </div>
+      <button type="button" data-close aria-label="Close" style="width:44px;height:44px;flex:none;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:center">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="progress" style="padding:16px 24px 0">
+      <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:8px">
+        <span id="stepLabel">Step 1 of 3</span><span id="stepName" style="color:var(--ink-3)">About you</span>
+      </div>
+      <div style="height:6px;border-radius:999px;background:#EEEBE4;overflow:hidden">
+        <div id="bar" style="height:100%;border-radius:999px;background:var(--navy);width:33%;transition:width .2s"></div>
+      </div>
+    </div>
+
+    <div style="flex:1;overflow-y:auto;padding:24px">
+      <div data-step="1" style="display:flex;flex-direction:column;gap:16px">
+        <label class="field">Full name (as on passport)<input type="text"></label>
+        <label class="field">Mobile number (WhatsApp)<input type="tel" placeholder="+91"></label>
+        <label class="field">Email<input type="email"></label>
+        <div class="grid2">
+          <label class="field">Date of birth<input type="date"></label>
+          <label class="field">State<select><option>Select</option><option>Tamil Nadu</option><option>Kerala</option><option>Karnataka</option><option>Maharashtra</option><option>Other</option></select></label>
+        </div>
+      </div>
+
+      <div data-step="2" hidden style="display:flex;flex-direction:column;gap:16px">
+        <label class="field">Sector you want to work in<select><option>Caregiving · 介護</option><option>IT &amp; Engineering</option><option>Food service · 外食</option><option>Construction · 建設</option><option>Manufacturing · 製造</option></select></label>
+        <label class="field">Current job title<input type="text" placeholder="e.g. Staff nurse, Java developer"></label>
+        <div class="grid2">
+          <label class="field">Experience<select><option>0–1 years</option><option>2–4 years</option><option>5+ years</option></select></label>
+          <label class="field">Japanese level<select><option>Learning now</option><option>JLPT N5</option><option>JLPT N4</option><option>JFT-Basic</option><option>JLPT N3</option><option>JLPT N2 or above</option></select></label>
+        </div>
+        <label class="field">Skills test (for SSW)<select><option>Not taken yet</option><option>Passed</option><option>Scheduled</option><option>Not needed (IT / degree)</option></select></label>
+        <fieldset style="border:none;margin:0;padding:0">
+          <legend style="font-size:14px;font-weight:600;padding:0;margin-bottom:8px">Do you have a passport?</legend>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <label class="radio"><input type="radio" name="passport"> Yes</label>
+            <label class="radio"><input type="radio" name="passport"> Applied</label>
+            <label class="radio"><input type="radio" name="passport"> No</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div data-step="3" hidden style="display:flex;flex-direction:column;gap:16px">
+        <div id="uploads" style="display:flex;flex-direction:column;gap:16px"></div>
+        <label style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-2);padding-top:4px">
+          <input type="checkbox" style="width:20px;height:20px;margin-top:2px;flex:none">
+          <span>I agree that JapanKaam may verify my documents and share an anonymised profile with employers in Japan. My contact details are shared only when I accept an interview.</span>
+        </label>
+      </div>
+
+      <div data-step="done" hidden style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:32px 8px">
+        <span aria-hidden="true" style="width:72px;height:72px;border-radius:50%;background:#1F7A4D;display:flex;align-items:center;justify-content:center">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+        </span>
+        <h3 class="display" style="margin:0;font-weight:800;font-size:26px">Thank you — your profile is in review</h3>
+        <p style="margin:0;color:var(--ink-2);font-size:15px;max-width:340px">Our team will check your documents and message you on WhatsApp within [X] days. Once verified, Japanese employers can see your profile.</p>
+        <p style="margin:0;font-size:14px;color:var(--ink-3)">Reference no. [JK-0000]</p>
+      </div>
+    </div>
+
+    <div style="padding:16px 24px;border-top:1px solid var(--line);display:flex;gap:10px">
+      <button type="button" id="backBtn" hidden class="big-btn" style="padding:0 22px;border:1px solid var(--line-2);background:#fff;color:var(--navy)">Back</button>
+      <button type="button" id="nextBtn" class="big-btn" style="flex:1;border:none;background:var(--navy);color:#fff">Continue</button>
+      <button type="button" id="submitBtn" hidden class="big-btn" style="flex:1;border:none;background:var(--accent);color:#fff">Submit my profile</button>
+      <button type="button" id="doneBtn" hidden data-close class="big-btn" style="flex:1;border:none;background:var(--navy);color:#fff">Done</button>
+    </div>
+  </aside>
+</div>
+
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const $ = id => document.getElementById(id);
+  const tick = '<span aria-hidden="true" style="width:24px;height:24px;border-radius:50%;background:#1F7A4D;display:flex;align-items:center;justify-content:center;flex:none"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>';
+
+  // Hero checks
+  $('checks').innerHTML = ['JLPT N4 certified','Caregiving skills test passed','Work history verified','Medical check completed','Video intro in Japanese']
+    .map(l => `<div style="display:flex;align-items:center;gap:12px;font-size:15px">${tick}<span>${esc(l)}</span></div>`).join('');
+
+  // Why
+  $('why').innerHTML = [
+    ['人材不足の解消','Fill hard-to-staff roles','A large, young and motivated workforce for sectors facing chronic shortages in Japan.'],
+    ['事前スクリーニング','Pre-screened, not just sourced','Skills tests, Japanese level, work history and health checks are verified before you see a profile.'],
+    ['日本語教育','Japanese-ready from day one','Candidates train for JLPT, JFT-Basic and workplace Japanese before they arrive.'],
+    ['定着支援','Built for retention','Onboarding, cultural training and ongoing life support keep new hires settled and staying.']
+  ].map(([ja,t,d]) => `<article style="border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px">
+      <p class="jp" style="margin:0;font-weight:700;font-size:14px;color:#B3261E">${ja}</p>
+      <h3 class="display" style="margin:0;font-size:21px;font-weight:700">${t}</h3>
+      <p class="muted" style="margin:0;font-size:15px">${d}</p></article>`).join('');
+
+  // Sectors
+  $('sectorGrid').innerHTML = [
+    ['介護','Caregiving','SSW · Care visa'],['IT','IT &amp; Engineering','Engineer / Specialist'],['外食','Food service','SSW'],
+    ['建設','Construction','SSW (i) &amp; (ii)'],['製造','Manufacturing','SSW']
+  ].map(([k,n,v]) => `<a href="#talent" style="text-decoration:none;color:var(--navy);border-radius:16px;background:var(--sand);padding:24px;display:flex;flex-direction:column;gap:6px">
+      <span aria-hidden="true" class="jp" style="font-weight:700;font-size:34px;color:var(--accent);line-height:1.1">${k}</span>
+      <span class="display" style="font-weight:700;font-size:19px">${n}</span>
+      <span class="muted" style="font-size:14px">${v}</span></a>`).join('');
+
+  // Candidates + filters
+  const all = [
+    { initials:'AK', role:'Care worker', exp:'4 yrs experience', from:'Kerala', jlpt:'JLPT N4', test:'Caregiving skills test passed', visa:'SSW (i)', skills:'Elderly care, hospital ward assistance, basic nursing.', start:'[MONTH]', cat:'Caregiving' },
+    { initials:'RS', role:'Backend engineer', exp:'6 yrs experience', from:'Bengaluru', jlpt:'JLPT N3', test:'B.Tech, Computer Science', visa:'Engineer / Specialist', skills:'Java, Spring, AWS, payment systems.', start:'[MONTH]', cat:'IT' },
+    { initials:'MP', role:'Kitchen staff', exp:'3 yrs experience', from:'Tamil Nadu', jlpt:'JFT-Basic A2', test:'Food service skills test passed', visa:'SSW (i)', skills:'Hotel kitchen prep, food hygiene, high-volume service.', start:'[MONTH]', cat:'Food' },
+    { initials:'VN', role:'Welding technician', exp:'5 yrs experience', from:'Gujarat', jlpt:'JLPT N4', test:'Construction skills test passed', visa:'SSW (i)', skills:'Arc & TIG welding, steel structures, site safety.', start:'[MONTH]', cat:'Construction' }
+  ];
+  const heart = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>';
+  function renderCandidates(f){
+    const list = f === 'All' ? all : all.filter(p => p.cat === f);
+    $('candidates').innerHTML = list.map(p => `<article style="background:#fff;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--line)">
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div aria-hidden="true" class="avatar" style="width:52px;height:52px;font-size:18px">${esc(p.initials)}</div>
+        <div style="flex:1;min-width:0">
+          <h3 class="display" style="margin:0 0 2px;font-size:20px;font-weight:700">${esc(p.role)}</h3>
+          <p class="muted" style="margin:0;font-size:15px">${esc(p.exp)} · ${esc(p.from)}</p>
+        </div>
+        <button type="button" aria-label="Shortlist candidate" aria-pressed="false" class="shortlist" style="width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">${heart}</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500">
+        <span class="pill blue">${esc(p.jlpt)}</span><span class="pill">${esc(p.test)}</span><span class="pill">${esc(p.visa)}</span>
+      </div>
+      <p class="muted" style="margin:0;font-size:15px">${esc(p.skills)}</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;border-top:1px solid #EEEBE4">
+        <p class="muted" style="margin:0;font-size:14px">Can start: <strong style="color:var(--navy)">${esc(p.start)}</strong></p>
+        <a href="#interview" class="btn-dark">Request interview</a>
+      </div></article>`).join('');
+  }
+  const cats = ['All','Caregiving','IT','Food','Construction'];
+  $('filters').innerHTML = cats.map(c => `<button type="button" class="chip" data-cat="${c}" aria-pressed="${c==='All'}">${c}</button>`).join('');
+  $('filters').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if(!b) return;
+    $('filters').querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b));
+    renderCandidates(b.dataset.cat);
+  });
+  $('candidates').addEventListener('click', e => {
+    const b = e.target.closest('.shortlist'); if(!b) return;
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', on);
+    b.style.color = on ? 'var(--accent)' : 'var(--navy)';
+    b.querySelector('svg').setAttribute('fill', on ? 'currentColor' : 'none');
+  });
+  renderCandidates('All');
+
+  // Steps
+  $('steps').innerHTML = [
+    ['01','求人登録','Post your role','Describe the position in Japanese or English. We translate it and match it to our talent pool.'],
+    ['02','候補者紹介','Review a shortlist','Receive pre-screened profiles with test results, video introductions and references.'],
+    ['03','オンライン面接','Interview online','Interview from Japan over video, with our Japanese-speaking executive joining to interpret.'],
+    ['04','内定・入社','Offer & onboarding','Our Japanese-speaking team coordinates the offer, joining date and first weeks with you and the candidate.']
+  ].map(([n,ja,t,d]) => `<li style="display:flex;flex-direction:column;gap:10px">
+      <span class="display" style="font-weight:800;font-size:56px;line-height:1;color:var(--accent)">${n}</span>
+      <p class="jp" style="margin:0;font-weight:700;font-size:14px;color:var(--ink-3)">${ja}</p>
+      <h3 class="display" style="margin:0;font-size:22px;font-weight:700">${esc(t)}</h3>
+      <p class="muted" style="margin:0;font-size:15px">${d}</p></li>`).join('');
+
+  // Support
+  $('supportList').innerHTML = [
+    ['Dedicated executive','専任担当者'],['Interview interpretation','面接通訳'],['Candidate coordination','候補者との連絡調整'],
+    ['Document translation','書類翻訳'],['Onboarding follow-up','入社後フォロー'],['Regular check-ins','定期面談']
+  ].map(([t,ja]) => `<li style="background:#1E2D52;border-radius:14px;padding:18px">
+      <p style="margin:0;font-weight:600;font-size:16px">${t}</p>
+      <p class="jp" style="margin:4px 0 0;font-size:13px;color:#C4CBDA">${ja}</p></li>`).join('');
+
+  // Plans
+  $('plans').innerHTML = [
+    ['人材紹介','Placement','20%','of annual salary','Shortlisting and interviews, coordinated by a Japanese-speaking executive. Pay only when a candidate joins.','Get started','1px solid var(--line)'],
+    ['紹介＋登録支援','Placement + Support','25%','of annual CTC','Everything in Placement, plus ongoing follow-up in Japanese with you and your hires after they join.','Most chosen','2px solid var(--navy)'],
+    ['大量採用','Enterprise','Custom','volume pricing','Dedicated recruiting for multiple sites, batch hiring and training cohorts in India.','Contact sales','1px solid var(--line)']
+  ].map(([ja,n,p,u,d,cta,b]) => `<article style="border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;background:#fff;border:${b}">
+      <p class="jp" style="margin:0;font-weight:700;font-size:14px;color:var(--ink-3)">${ja}</p>
+      <h3 class="display" style="margin:0;font-size:24px;font-weight:700">${n}</h3>
+      <p class="display" style="margin:0;font-weight:800;font-size:32px">${p}<span style="font-size:15px;font-weight:500;color:var(--ink-3)"> ${u}</span></p>
+      <p class="muted" style="margin:0;font-size:15px;flex:1">${d}</p>
+      <a href="#consult" style="text-align:center;text-decoration:none;padding:13px;border-radius:10px;background:var(--navy);color:#fff;font-weight:600">${cta}</a></article>`).join('');
+
+  // Language toggle (visual state only, as in the design)
+  document.querySelectorAll('.seg').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.seg').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+
+  // Uploads
+  $('uploads').innerHTML = [
+    ['Resume / CV','PDF or photo, up to 5 MB'],['Certificates','Degree, JLPT / JFT, skills test results'],['Video intro (optional)','30–60 sec introducing yourself in Japanese']
+  ].map(([t,h]) => `<label style="display:flex;align-items:center;gap:14px;padding:16px;border:1.5px dashed var(--line-2);border-radius:12px;cursor:pointer">
+      <span aria-hidden="true" style="width:44px;height:44px;flex:none;border-radius:10px;background:var(--sand-2);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14213D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg></span>
+      <span style="flex:1;min-width:0;display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">${t}</span><span style="font-size:13px;color:var(--ink-3)">${h}</span></span>
+      <input type="file" style="width:96px;font-size:12px"></label>`).join('');
+
+  // Job seeker panel wizard
+  const panel = $('panel'), tab = $('seekerTab');
+  const names = ['About you','Skills & Japanese','Documents'];
+  let step = 1, done = false;
+  function render(){
+    panel.querySelectorAll('[data-step]').forEach(el => {
+      el.hidden = done ? el.dataset.step !== 'done' : el.dataset.step !== String(step);
+    });
+    $('progress').hidden = done;
+    $('stepLabel').textContent = 'Step ' + step + ' of 3';
+    $('stepName').textContent = names[step - 1];
+    $('bar').style.width = Math.round(step / 3 * 100) + '%';
+    $('backBtn').hidden = done || step === 1;
+    $('nextBtn').hidden = done || step === 3;
+    $('submitBtn').hidden = done || step !== 3;
+    $('doneBtn').hidden = !done;
+  }
+  function openPanel(){ step = 1; done = false; render(); panel.hidden = false; tab.hidden = true; }
+  function closePanel(){ panel.hidden = true; tab.hidden = false; }
+  tab.addEventListener('click', openPanel);
+  panel.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closePanel));
+  $('nextBtn').addEventListener('click', () => { step = Math.min(3, step + 1); render(); });
+  $('backBtn').addEventListener('click', () => { step = Math.max(1, step - 1); render(); });
+  $('submitBtn').addEventListener('click', () => { done = true; render(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closePanel(); });
+})();
+</script>
+</body>
+</html>
